@@ -10,9 +10,9 @@
   --input: rgba(255, 255, 255, 0.04);
   --muted: rgba(255, 255, 255, 0.04);
   --secondary: rgba(255, 255, 255, 0.06);
-  --green: oklch(72% .19 160);
-  --green-dim: oklch(55% .16 160);
-  --violet: oklch(65% .22 300);
+  --green: oklch(68% .13 246);
+  --green-dim: oklch(52% .12 246);
+  --violet: oklch(60% .15 280);
   --gradient: linear-gradient(120deg, var(--green), var(--violet));
   --text: oklch(94% .008 200);
   --text-dim: oklch(72% .015 210);
@@ -61,7 +61,7 @@ body{
 .mesh-bg::before,
 .mesh-bg::after{
   content:'';position:absolute;width:60vmax;height:60vmax;border-radius:50%;
-  filter:blur(90px);opacity:.16;
+  filter:blur(130px);opacity:.09;
 }
 .mesh-bg::before{
   background:var(--green);top:-20%;left:-10%;
@@ -170,7 +170,7 @@ body{
 @keyframes blink{50%{opacity:0;}}
 .hero-location{color:var(--text-dim);font-family:var(--mono);font-size:0.95rem;margin-bottom:38px;}
 .hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;}
-.hero-socials{display:flex;gap:16px;justify-content:center;margin-bottom:46px;}
+.hero-socials{display:flex;gap:16px;justify-content:center;margin-top:44px;}
 .social-icon{
   width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
   border:1px solid var(--border);background:var(--card);backdrop-filter:blur(10px);
@@ -179,9 +179,9 @@ body{
 }
 .social-icon:hover{
   color:var(--green);border-color:var(--green-dim);transform:translateY(-3px);
-  box-shadow:0 8px 24px color-mix(in oklab, var(--green) 25%, transparent);
+  box-shadow:0 6px 18px color-mix(in oklab, var(--green) 16%, transparent);
 }
-.hero-pills{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.hero-pills{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:6px;}
 .pill{
   display:flex;flex-direction:column;align-items:center;gap:8px;
   font-family:var(--mono);font-size:0.82rem;color:var(--text-dim);
@@ -203,7 +203,7 @@ body{
   background:var(--gradient);color:#06090f;
   box-shadow:0 0 0 transparent;
 }
-.btn-primary:hover{box-shadow:0 10px 34px color-mix(in oklab, var(--green) 32%, transparent);}
+.btn-primary:hover{box-shadow:0 8px 24px color-mix(in oklab, var(--green) 20%, transparent);}
 .btn-secondary{
   background:var(--card);color:var(--text);border:1px solid var(--border-hover);
   backdrop-filter:blur(10px);

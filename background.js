@@ -10,7 +10,7 @@
 
   const ctx = canvas.getContext("2d");
   let w, h;
-  const GREEN = "110, 231, 168";
+  const GREEN = "75, 159, 227";
   const page = document.body.dataset.page || "home";
 
   // ---- shared helpers -----------------------------------------------------
@@ -82,7 +82,7 @@
       case "home": {
         // Flagship: code rain + glowing particle network + drifting light bloom.
         const FONT_SIZE = 16;
-        const glyphs = "01アイウエオカキクケコ$#&%SEC{}<>/*";
+        const glyphs = "01{}<>/=+;#SEC";
         const columns = Math.floor(w / FONT_SIZE);
         const drops = Array.from({ length: columns }, () => ({
           y: Math.random() * -h,
