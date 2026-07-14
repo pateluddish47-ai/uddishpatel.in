@@ -46,11 +46,8 @@ body{
 /* Subtle static background: faint paper-grain texture + soft grid, no animation */
 .grid-bg{
   position:fixed;inset:0;z-index:-1;
-  background-image:
-    linear-gradient(color-mix(in oklab, var(--green) 4%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in oklab, var(--green) 4%, transparent) 1px, transparent 1px),
-    url("assets/bg-texture.svg");
-  background-size:48px 48px, 48px 48px, 180px 180px;
+  background-image:url("assets/bg-texture.svg");
+  background-size:180px 180px;
   opacity:.5;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 75%);
 }
