@@ -14,9 +14,9 @@
   --green-dim: oklch(45% .15 246);
   --violet: oklch(48% .18 280);
   --gradient: linear-gradient(120deg, var(--green), var(--violet));
-  --text: oklch(23% .015 70);
-  --text-dim: oklch(43% .02 65);
-  --text-faint: oklch(58% .018 65);
+  --text: oklch(26% .045 50);
+  --text-dim: oklch(45% .04 50);
+  --text-faint: oklch(60% .035 55);
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   --sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --radius: .875rem;
@@ -43,14 +43,21 @@ body{
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 
-/* Subtle static background: faint paper-grain texture + soft grid, no animation */
+/* Subtle static background: soft color washes + faint paper-grain texture, no animation */
 .grid-bg{
-  position:fixed;inset:0;z-index:-1;
+  position:fixed;inset:0;z-index:-1;overflow:hidden;
   background-image:url("assets/bg-texture.svg");
   background-size:180px 180px;
   opacity:.5;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 75%);
 }
+.grid-bg::before,
+.grid-bg::after{
+  content:'';position:absolute;width:52vmax;height:52vmax;border-radius:50%;
+  filter:blur(110px);opacity:.10;
+}
+.grid-bg::before{background:var(--green);top:-16%;left:-12%;}
+.grid-bg::after{background:var(--violet);bottom:-20%;right:-10%;}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto;}
 }
