@@ -25,7 +25,7 @@ function renderNav() {
   root.innerHTML = `
     <header class="navbar">
       <div class="nav-inner">
-        <a href="index.html" class="logo">Uddish</a>
+        <a href="index.html" class="logo">Uddish Patel</a>
         <nav class="nav-links">${links}</nav>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
           <span></span><span></span><span></span>
@@ -47,7 +47,7 @@ function renderFooter() {
   const year = new Date().getFullYear();
   root.innerHTML = `
     <footer class="footer">
-      <div class="logo">Uddish</div>
+      <div class="logo">Uddish Patel</div>
       <div>© ${year} Uddish Patel — All rights reserved.</div>
       <div class="footer-links">
         <a href="https://linkedin.com/in/uddish-patel-1b9895393" target="_blank" rel="noopener">LinkedIn</a>
