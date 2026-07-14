@@ -160,6 +160,10 @@ pdf.cell(0, 5, "B.E. Computer Science & Engineering  |  CGPA: 7.80/10", new_x=XP
 pdf.set_font("Helvetica", "", 9.5)
 pdf.set_text_color(*MUTED)
 pdf.cell(0, 5, "Narnarayan Shastri Institute of Technology (NSIT), Gujarat Technological University (GTU)", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+pdf.ln(3)
+pdf.set_font("Helvetica", "B", 9.8)
+pdf.set_text_color(20, 20, 20)
+pdf.cell(0, 5, "Skillogic Cybersecurity Course  |  In Progress", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 
 # ---- TRAINING & CERTIFICATIONS -------------------------------------------
 section_title("TRAINING & CERTIFICATIONS")
