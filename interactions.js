@@ -1,15 +1,33 @@
-// Shared micro-interactions used across every page: scroll-reveal fade-ins
-// and animated stat counters. Kept intentionally minimal — no ripple or
-// magnetic-hover effects, per a simpler "less motion" direction.
+// Shared micro-interactions used across every page: scroll-reveal fade/slide-ins
+// (in the spirit of Olynto Technologies' site — alternating fadeLeft/fadeRight
+// on cards, fadeUp on headings) and animated stat counters.
 // All guarded so pages without a given element simply skip that feature.
 
 document.addEventListener("DOMContentLoaded", () => {
   // ---- scroll reveal --------------------------------------------------
-  const revealTargets = document.querySelectorAll(
-    ".card, .section-title, .hero-inner, .profile-card, .resume-card, .resume-preview"
+  // Headings/hero: fade up. Cards: alternate left/right per grid for rhythm.
+  const fadeUpTargets = document.querySelectorAll(
+    ".section-title, .hero-inner, .resume-preview"
   );
-  revealTargets.forEach(el => el.classList.add("reveal"));
+  fadeUpTargets.forEach(el => el.classList.add("reveal"));
 
+  const cardGroups = document.querySelectorAll(
+    ".skills-grid, .cert-grid, .edu-grid, .project-list, .timeline, .about-cards"
+  );
+  const seenCards = new Set();
+  cardGroups.forEach(group => {
+    group.querySelectorAll(".card").forEach((el, i) => {
+      el.classList.add(i % 2 === 0 ? "reveal-left" : "reveal-right");
+      seenCards.add(el);
+    });
+  });
+
+  // Any remaining cards not inside a recognized grid (e.g. profile-card) fade up.
+  document.querySelectorAll(".card").forEach(el => {
+    if (!seenCards.has(el)) el.classList.add("reveal");
+  });
+
+  const revealTargets = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
   const revealObserver = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
