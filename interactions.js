@@ -1,7 +1,7 @@
-// Shared premium micro-interactions used across every page:
-// page fade-in, scroll-reveal, animated counters, skill-bar fill,
-// button ripple, and magnetic button hover. All guarded so pages
-// without a given element simply skip that feature.
+// Shared micro-interactions used across every page: scroll-reveal fade-ins
+// and animated stat counters. Kept intentionally minimal — no ripple or
+// magnetic-hover effects, per a simpler "less motion" direction.
+// All guarded so pages without a given element simply skip that feature.
 
 document.addEventListener("DOMContentLoaded", () => {
   // ---- scroll reveal --------------------------------------------------
@@ -51,49 +51,4 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.4 }
   );
   counters.forEach(el => counterObserver.observe(el));
-
-  // ---- skill bar fill (width from data-percent) -----------------------
-  const skillBars = document.querySelectorAll(".skill-bar-fill");
-  const skillObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const pct = entry.target.dataset.percent || "0";
-          entry.target.style.width = pct + "%";
-          skillObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
-  skillBars.forEach(el => skillObserver.observe(el));
-
-  // ---- button ripple ----------------------------------------------------
-  document.querySelectorAll(".btn").forEach(btn => {
-    btn.addEventListener("click", function (e) {
-      const rect = this.getBoundingClientRect();
-      const ripple = document.createElement("span");
-      const size = Math.max(rect.width, rect.height);
-      ripple.className = "ripple";
-      ripple.style.width = ripple.style.height = size + "px";
-      ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
-      ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
-      this.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 600);
-    });
-  });
-
-  // ---- magnetic hover on primary/secondary buttons ---------------------
-  const MAGNET_STRENGTH = 0.25;
-  document.querySelectorAll(".btn-primary, .btn-secondary, .social-icon").forEach(btn => {
-    btn.addEventListener("mousemove", (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      btn.style.transform = `translate(${x * MAGNET_STRENGTH}px, ${y * MAGNET_STRENGTH}px) translateY(-2px)`;
-    });
-    btn.addEventListener("mouseleave", () => {
-      btn.style.transform = "";
-    });
-  });
 });
