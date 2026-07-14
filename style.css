@@ -1,22 +1,22 @@
 :root{
-  /* Clean light theme: white/near-white base + soft cards + blue-indigo accent */
-  --bg: #F7F9FC;
-  --bg-elevated: #FFFFFF;
-  --card: #FFFFFF;
-  --card-solid: #FFFFFF;
-  --popover: #FFFFFF;
-  --border: rgba(15, 23, 42, 0.09);
-  --border-hover: rgba(15, 23, 42, 0.18);
-  --input: rgba(15, 23, 42, 0.03);
-  --muted: rgba(15, 23, 42, 0.04);
-  --secondary: rgba(15, 23, 42, 0.05);
+  /* Warm neutral light theme: soft beige/cream base + soft cards + blue-indigo accent */
+  --bg: oklch(97% .008 75);
+  --bg-elevated: oklch(99% .004 75);
+  --card: oklch(99% .004 75);
+  --card-solid: oklch(99% .004 75);
+  --popover: oklch(99% .004 75);
+  --border: oklch(45% .015 75 / .12);
+  --border-hover: oklch(40% .02 75 / .22);
+  --input: oklch(93% .01 75 / .5);
+  --muted: oklch(93% .01 75 / .6);
+  --secondary: oklch(92% .01 75 / .6);
   --green: oklch(55% .16 246);
   --green-dim: oklch(45% .15 246);
   --violet: oklch(48% .18 280);
   --gradient: linear-gradient(120deg, var(--green), var(--violet));
-  --text: oklch(20% .015 250);
-  --text-dim: oklch(42% .02 240);
-  --text-faint: oklch(58% .02 230);
+  --text: oklch(23% .015 70);
+  --text-dim: oklch(43% .02 65);
+  --text-faint: oklch(58% .018 65);
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   --sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --radius: .875rem;
@@ -43,13 +43,15 @@ body{
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 
-/* Faint static grid texture — no animation, just subtle depth */
+/* Subtle static background: faint paper-grain texture + soft grid, no animation */
 .grid-bg{
   position:fixed;inset:0;z-index:-1;
   background-image:
     linear-gradient(color-mix(in oklab, var(--green) 4%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in oklab, var(--green) 4%, transparent) 1px, transparent 1px);
-  background-size:48px 48px;
+    linear-gradient(90deg, color-mix(in oklab, var(--green) 4%, transparent) 1px, transparent 1px),
+    url("assets/bg-texture.svg");
+  background-size:48px 48px, 48px 48px, 180px 180px;
+  opacity:.5;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 75%);
 }
 @media (prefers-reduced-motion: reduce){
