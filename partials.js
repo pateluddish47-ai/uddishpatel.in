@@ -54,7 +54,6 @@ function renderFooter() {
         <a href="https://github.com/pateluddish47-ai" target="_blank" rel="noopener">GitHub</a>
         <a href="mailto:pateluddish47@gmail.com">Email</a>
       </div>
-      <div>Made with <span class="footer-heart">❤️</span> by Uddish Patel</div>
     </footer>
   `;
 }
