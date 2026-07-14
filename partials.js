@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { page: "projects", label: "Projects", href: "projects.html" },
   { page: "skills", label: "Skills", href: "skills.html" },
   { page: "certifications", label: "Certifications", href: "certifications.html" },
+  { page: "resume", label: "Resume", href: "resume.html" },
   { page: "contact", label: "Contact", href: "contact.html" },
 ];
 
@@ -43,14 +44,17 @@ function renderNav() {
 function renderFooter() {
   const root = document.getElementById("footer-root");
   if (!root) return;
+  const year = new Date().getFullYear();
   root.innerHTML = `
     <footer class="footer">
       <div class="logo">Uddish</div>
-      <div>© 2026 Uddish Patel — Full-Stack Dev &amp; Cybersecurity Learner</div>
+      <div>© ${year} Uddish Patel — All rights reserved.</div>
       <div class="footer-links">
         <a href="https://linkedin.com/in/uddish-patel-1b9895393" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/pateluddish47-ai" target="_blank" rel="noopener">GitHub</a>
         <a href="mailto:pateluddish47@gmail.com">Email</a>
       </div>
+      <div>Made with <span class="footer-heart">❤️</span> by Uddish Patel</div>
     </footer>
   `;
 }

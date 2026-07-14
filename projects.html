@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uddish Patel</title>
+<title>Uddish Patel | Software Engineer Portfolio</title>
+<meta name="description" content="Security and full-stack engineering projects by Uddish Patel: AegisScan, SentinelShield, CA Management System, and more.">
+<link rel="canonical" href="https://uddishpatel.in/projects.html">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,148 +15,185 @@
 <body data-page="projects">
 
 <div class="grid-bg" aria-hidden="true"></div>
+<div class="mesh-bg" aria-hidden="true"></div>
 <div id="nav-root"></div>
 
 <main class="section" id="projects">
   <div class="section-inner">
     <h2 class="section-title"><span class="slash">//</span> Projects</h2>
+    <p class="section-lead">A mix of security tooling and full-stack applications — built, deployed, and (where noted) still running live.</p>
     <div class="project-list">
 
       <div class="card project-card featured">
-        <div class="card-head">
-          <div>
-            <span class="badge-pill">Featured</span>
-            <h3>AegisScan</h3>
-            <div class="card-sub">Web Vulnerability Scanner</div>
+        <div class="project-thumb"><span class="thumb-glyph">🔍</span></div>
+        <div class="project-card-body">
+          <div class="card-head">
+            <div>
+              <span class="badge-pill">Featured</span>
+              <h3>AegisScan</h3>
+              <div class="card-sub">Web Vulnerability Scanner</div>
+            </div>
+            <span class="card-date">Feb 2026 – Present</span>
           </div>
-          <span class="card-date">Feb 2026 – Present</span>
-        </div>
-        <p>AegisScan is a web-based vulnerability scanner built using Python and Flask designed to analyze web applications for security issues. It implements a comprehensive reconnaissance engine that performs DNS lookup, WHOIS queries, subdomain enumeration, and directory discovery.</p>
-        <p>The tool integrates port scanning capabilities and API endpoint analysis, along with checking security headers for misconfigurations. Core vulnerability detection includes Cross-Site Scripting (XSS) and SQL Injection scanning with an interactive dashboard that visualizes scan results for security professionals.</p>
-        <div class="key-features">
-          <span class="kf-label">KEY FEATURES</span>
-          <div class="kf-grid">
-            <div>▸ DNS lookup, WHOIS, subdomain enumeration, and directory discovery</div>
-            <div>▸ Port scanning and open service detection</div>
-            <div>▸ API endpoint analysis and security header checks</div>
-            <div>▸ XSS and SQL Injection vulnerability detection</div>
-            <div>▸ Interactive dashboard for visualizing scan results</div>
-            <div>▸ Automated security testing workflows</div>
+          <p>AegisScan is a web-based vulnerability scanner built using Python and Flask designed to analyze web applications for security issues. It implements a comprehensive reconnaissance engine that performs DNS lookup, WHOIS queries, subdomain enumeration, and directory discovery.</p>
+          <p>The tool integrates port scanning capabilities and API endpoint analysis, along with checking security headers for misconfigurations. Core vulnerability detection includes Cross-Site Scripting (XSS) and SQL Injection scanning with an interactive dashboard that visualizes scan results for security professionals.</p>
+          <div class="key-features">
+            <span class="kf-label">KEY FEATURES</span>
+            <div class="kf-grid">
+              <div>▸ DNS lookup, WHOIS, subdomain enumeration, and directory discovery</div>
+              <div>▸ Port scanning and open service detection</div>
+              <div>▸ API endpoint analysis and security header checks</div>
+              <div>▸ XSS and SQL Injection vulnerability detection</div>
+              <div>▸ Interactive dashboard for visualizing scan results</div>
+              <div>▸ Automated security testing workflows</div>
+            </div>
           </div>
-        </div>
-        <div class="tag-row">
-          <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Reconnaissance</span>
-          <span class="tag">XSS Detection</span><span class="tag">SQLi Detection</span><span class="tag">OWASP</span><span class="tag">Port Scanning</span>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Reconnaissance</span>
+            <span class="tag">XSS Detection</span><span class="tag">SQLi Detection</span><span class="tag">OWASP</span><span class="tag">Port Scanning</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/pateluddish47-ai" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub</a>
+            <span class="btn btn-primary btn-sm btn-disabled" title="Not publicly deployed">Live Demo</span>
+          </div>
         </div>
       </div>
 
       <div class="card project-card featured">
-        <div class="card-head">
-          <div>
-            <span class="badge-pill">Featured</span>
-            <h3>SentinelShield</h3>
-            <div class="card-sub">Advanced Intrusion Detection &amp; Web Protection System</div>
+        <div class="project-thumb"><span class="thumb-glyph">🛡️</span></div>
+        <div class="project-card-body">
+          <div class="card-head">
+            <div>
+              <span class="badge-pill">Featured</span>
+              <h3>SentinelShield</h3>
+              <div class="card-sub">Advanced Intrusion Detection &amp; Web Protection System</div>
+            </div>
+            <span class="card-date">Mar 2026 – May 2026</span>
           </div>
-          <span class="card-date">Mar 2026 – May 2026</span>
-        </div>
-        <p>SentinelShield is a lightweight Web Application Firewall (WAF) and Intrusion Detection System built in Flask that inspects HTTP requests in real time. It detects SQL injection, XSS, directory traversal, and command injection attacks via signature-based rule matching.</p>
-        <p>The system enforces per-IP rate limiting with temporary and permanent ban escalation based on threat level. A live threat dashboard visualizes incoming threats and blocked requests. Also includes a one-click "Attack Console" for demonstrating detections and an automated accuracy test harness with precision/recall/false-positive analysis.</p>
-        <div class="key-features">
-          <span class="kf-label">KEY FEATURES</span>
-          <div class="kf-grid">
-            <div>▸ Real-time HTTP request inspection and threat detection</div>
-            <div>▸ SQL injection, XSS, directory traversal, command injection detection</div>
-            <div>▸ Per-IP rate limiting with escalating ban system</div>
-            <div>▸ Live threat visualization dashboard</div>
-            <div>▸ One-click Attack Console for demo and testing</div>
-            <div>▸ Automated accuracy test harness (precision/recall/FP analysis)</div>
-            <div>▸ Generated PDF practical report</div>
+          <p>SentinelShield is a lightweight Web Application Firewall (WAF) and Intrusion Detection System built in Flask that inspects HTTP requests in real time. It detects SQL injection, XSS, directory traversal, and command injection attacks via signature-based rule matching.</p>
+          <p>The system enforces per-IP rate limiting with temporary and permanent ban escalation based on threat level. A live threat dashboard visualizes incoming threats and blocked requests. Also includes a one-click "Attack Console" for demonstrating detections and an automated accuracy test harness with precision/recall/false-positive analysis.</p>
+          <div class="key-features">
+            <span class="kf-label">KEY FEATURES</span>
+            <div class="kf-grid">
+              <div>▸ Real-time HTTP request inspection and threat detection</div>
+              <div>▸ SQL injection, XSS, directory traversal, command injection detection</div>
+              <div>▸ Per-IP rate limiting with escalating ban system</div>
+              <div>▸ Live threat visualization dashboard</div>
+              <div>▸ One-click Attack Console for demo and testing</div>
+              <div>▸ Automated accuracy test harness (precision/recall/FP analysis)</div>
+              <div>▸ Generated PDF practical report</div>
+            </div>
           </div>
-        </div>
-        <div class="tag-row">
-          <span class="tag">Flask</span><span class="tag">WAF</span><span class="tag">IDS</span>
-          <span class="tag">Rate Limiting</span><span class="tag">Dashboard</span><span class="tag">pytest</span><span class="tag">Security</span>
+          <div class="tag-row">
+            <span class="tag">Flask</span><span class="tag">WAF</span><span class="tag">IDS</span>
+            <span class="tag">Rate Limiting</span><span class="tag">Dashboard</span><span class="tag">pytest</span><span class="tag">Security</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/pateluddish47-ai" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub</a>
+            <a href="https://sentinelshield-6cma.onrender.com" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live Demo</a>
+          </div>
         </div>
       </div>
 
       <div class="card project-card">
-        <div class="card-head">
-          <div>
-            <h3>CA Management System</h3>
-            <div class="card-sub">Full-Stack Client Management Application</div>
+        <div class="project-thumb"><span class="thumb-glyph">💼</span></div>
+        <div class="project-card-body">
+          <div class="card-head">
+            <div>
+              <h3>CA Management System</h3>
+              <div class="card-sub">Full-Stack Client Management Application</div>
+            </div>
+            <span class="card-date">Nov 2025 – Present</span>
           </div>
-          <span class="card-date">Nov 2025 – Present</span>
-        </div>
-        <p>A full-stack web application built for managing client data and workflows at a CA (Chartered Accountant) firm, using Python, Flask, and PostgreSQL. Designed and implemented REST APIs for handling client records and data operations with full CRUD functionality.</p>
-        <p>Features secure authentication, role-based access controls, and data validation. The database was initially built in SQLite and migrated to PostgreSQL for production readiness. The application was containerized with Docker and deployed to cloud platforms for scalability and performance.</p>
-        <div class="key-features">
-          <span class="kf-label">KEY FEATURES</span>
-          <div class="kf-grid">
-            <div>▸ REST API design for client record management</div>
-            <div>▸ Authentication and secure session management</div>
-            <div>▸ Full CRUD functionality with input validation</div>
-            <div>▸ Database migration from SQLite to PostgreSQL</div>
-            <div>▸ Docker containerization and cloud deployment</div>
-            <div>▸ Role-based data handling and access control</div>
+          <p>A full-stack web application built for managing client data and workflows at a CA (Chartered Accountant) firm, using Python, Flask, and PostgreSQL. Designed and implemented REST APIs for handling client records and data operations with full CRUD functionality.</p>
+          <p>Features secure authentication, role-based access controls, and data validation. The database was initially built in SQLite and migrated to PostgreSQL for production readiness. The application was containerized with Docker and deployed to cloud platforms for scalability and performance.</p>
+          <div class="key-features">
+            <span class="kf-label">KEY FEATURES</span>
+            <div class="kf-grid">
+              <div>▸ REST API design for client record management</div>
+              <div>▸ Authentication and secure session management</div>
+              <div>▸ Full CRUD functionality with input validation</div>
+              <div>▸ Database migration from SQLite to PostgreSQL</div>
+              <div>▸ Docker containerization and cloud deployment</div>
+              <div>▸ Role-based data handling and access control</div>
+            </div>
           </div>
-        </div>
-        <div class="tag-row">
-          <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">PostgreSQL</span>
-          <span class="tag">Docker</span><span class="tag">REST API</span><span class="tag">Auth</span><span class="tag">CRUD</span>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">PostgreSQL</span>
+            <span class="tag">Docker</span><span class="tag">REST API</span><span class="tag">Auth</span><span class="tag">CRUD</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/pateluddish47-ai" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub</a>
+            <span class="btn btn-primary btn-sm btn-disabled" title="Private client project">Live Demo</span>
+          </div>
         </div>
       </div>
 
       <div class="card project-card">
-        <div class="card-head">
-          <div>
-            <h3>Password Cracking &amp; Credential Attack Suite</h3>
-            <div class="card-sub">Ethical Password Security Toolkit</div>
+        <div class="project-thumb"><span class="thumb-glyph">🔑</span></div>
+        <div class="project-card-body">
+          <div class="card-head">
+            <div>
+              <h3>Password Cracking &amp; Credential Attack Suite</h3>
+              <div class="card-sub">Ethical Password Security Toolkit</div>
+            </div>
+            <span class="card-date">2026</span>
           </div>
-          <span class="card-date">2026</span>
-        </div>
-        <p>An ethical password security toolkit with a live interactive Streamlit dashboard. It performs real crypt-hash cracking against Linux shadow files ($1/$5/$6$) and Windows NTLM hashes.</p>
-        <p>Includes a NIST SP 800-63B compliance engine with breach corpus validation, entropy analysis, and pattern checks. Features a live hardware benchmark measuring actual hashes/second at runtime. Visual analytics include entropy histograms, severity pie charts, and risk rankings. Comes with 38 automated pytest tests for reliability assurance.</p>
-        <div class="key-features">
-          <span class="kf-label">KEY FEATURES</span>
-          <div class="kf-grid">
-            <div>▸ Linux shadow and Windows NTLM hash cracking</div>
-            <div>▸ NIST SP 800-63B compliance engine</div>
-            <div>▸ Visual analytics: entropy histogram, severity pie chart, risk ranking</div>
-            <div>▸ Live hardware benchmark (hashes/sec at runtime)</div>
-            <div>▸ Breach corpus, entropy analysis, and pattern checks</div>
-            <div>▸ 38 automated pytest tests</div>
+          <p>An ethical password security toolkit with a live interactive Streamlit dashboard. It performs real crypt-hash cracking against Linux shadow files ($1/$5/$6$) and Windows NTLM hashes.</p>
+          <p>Includes a NIST SP 800-63B compliance engine with breach corpus validation, entropy analysis, and pattern checks. Features a live hardware benchmark measuring actual hashes/second at runtime. Visual analytics include entropy histograms, severity pie charts, and risk rankings. Comes with 38 automated pytest tests for reliability assurance.</p>
+          <div class="key-features">
+            <span class="kf-label">KEY FEATURES</span>
+            <div class="kf-grid">
+              <div>▸ Linux shadow and Windows NTLM hash cracking</div>
+              <div>▸ NIST SP 800-63B compliance engine</div>
+              <div>▸ Visual analytics: entropy histogram, severity pie chart, risk ranking</div>
+              <div>▸ Live hardware benchmark (hashes/sec at runtime)</div>
+              <div>▸ Breach corpus, entropy analysis, and pattern checks</div>
+              <div>▸ 38 automated pytest tests</div>
+            </div>
           </div>
-        </div>
-        <div class="tag-row">
-          <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">pytest</span>
-          <span class="tag">NIST</span><span class="tag">Security</span><span class="tag">Analytics</span><span class="tag">IAM</span>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">pytest</span>
+            <span class="tag">NIST</span><span class="tag">Security</span><span class="tag">Analytics</span><span class="tag">IAM</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/pateluddish47-ai" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub</a>
+            <a href="https://password-cracking-credential-attack-suite-58xby2nrznzkhogifexp.streamlit.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live Demo</a>
+          </div>
         </div>
       </div>
 
       <div class="card project-card">
-        <div class="card-head">
-          <div>
-            <h3>Doctor Appointment System</h3>
-            <div class="card-sub">Healthcare Management Web Application</div>
+        <div class="project-thumb"><span class="thumb-glyph">🏥</span></div>
+        <div class="project-card-body">
+          <div class="card-head">
+            <div>
+              <h3>Doctor Appointment System</h3>
+              <div class="card-sub">Healthcare Management Web Application</div>
+            </div>
+            <span class="card-date">2025</span>
           </div>
-          <span class="card-date">2025</span>
-        </div>
-        <p>A web-based application for managing doctor appointments and patient workflows built with Flask, HTML, CSS, and JavaScript. Provides a complete system for booking appointments, managing patient data, and handling prescriptions.</p>
-        <p>Features responsive frontend interfaces integrated with backend APIs, secure authentication mechanisms, and proper data validation throughout. Special attention was paid to handling sensitive healthcare data with secure coding practices.</p>
-        <div class="key-features">
-          <span class="kf-label">KEY FEATURES</span>
-          <div class="kf-grid">
-            <div>▸ Doctor appointment booking and management</div>
-            <div>▸ Patient data management and prescriptions</div>
-            <div>▸ Authentication and session management</div>
-            <div>▸ Responsive frontend design</div>
-            <div>▸ Backend API integration</div>
-            <div>▸ Data validation and secure data handling</div>
+          <p>A web-based application for managing doctor appointments and patient workflows built with Flask, HTML, CSS, and JavaScript. Provides a complete system for booking appointments, managing patient data, and handling prescriptions.</p>
+          <p>Features responsive frontend interfaces integrated with backend APIs, secure authentication mechanisms, and proper data validation throughout. Special attention was paid to handling sensitive healthcare data with secure coding practices.</p>
+          <div class="key-features">
+            <span class="kf-label">KEY FEATURES</span>
+            <div class="kf-grid">
+              <div>▸ Doctor appointment booking and management</div>
+              <div>▸ Patient data management and prescriptions</div>
+              <div>▸ Authentication and session management</div>
+              <div>▸ Responsive frontend design</div>
+              <div>▸ Backend API integration</div>
+              <div>▸ Data validation and secure data handling</div>
+            </div>
           </div>
-        </div>
-        <div class="tag-row">
-          <span class="tag">Flask</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span>
-          <span class="tag">Auth</span><span class="tag">Healthcare</span><span class="tag">REST API</span>
+          <div class="tag-row">
+            <span class="tag">Flask</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span>
+            <span class="tag">Auth</span><span class="tag">Healthcare</span><span class="tag">REST API</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/pateluddish47-ai" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub</a>
+            <span class="btn btn-primary btn-sm btn-disabled" title="Not publicly deployed">Live Demo</span>
+          </div>
         </div>
       </div>
 
@@ -167,5 +206,6 @@
 <script src="partials.js"></script>
 <script src="background.js"></script>
 <script src="script.js"></script>
+<script src="interactions.js"></script>
 </body>
 </html>

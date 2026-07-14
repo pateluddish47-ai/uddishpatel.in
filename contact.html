@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uddish Patel</title>
+<title>Uddish Patel | Software Engineer Portfolio</title>
+<meta name="description" content="Get in touch with Uddish Patel — Computer Science Engineering Student, Python Developer, Cybersecurity Enthusiast.">
+<link rel="canonical" href="https://uddishpatel.in/contact.html">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +15,7 @@
 <body data-page="contact">
 
 <div class="grid-bg" aria-hidden="true"></div>
+<div class="mesh-bg" aria-hidden="true"></div>
 <div id="nav-root"></div>
 
 <main class="section" id="contact">
@@ -37,6 +40,13 @@
           </div>
         </div>
         <div class="contact-item">
+          <span class="contact-icon">💻</span>
+          <div>
+            <div class="info-label">GitHub</div>
+            <a href="https://github.com/pateluddish47-ai" target="_blank" rel="noopener" class="info-value link">github.com/pateluddish47-ai</a>
+          </div>
+        </div>
+        <div class="contact-item">
           <span class="contact-icon">📍</span>
           <div>
             <div class="info-label">Location</div>
@@ -45,29 +55,59 @@
         </div>
 
         <div class="stat-row">
-          <div class="stat-box"><span class="stat-num">5+</span><span class="stat-label">Projects</span></div>
-          <div class="stat-box"><span class="stat-num">4</span><span class="stat-label">Certifications</span></div>
-          <div class="stat-box"><span class="stat-num">1.5yr</span><span class="stat-label">Experience</span></div>
+          <div class="stat-box"><span class="stat-num" data-counter="5" data-counter-suffix="+">0</span><span class="stat-label">Projects</span></div>
+          <div class="stat-box"><span class="stat-num" data-counter="4">0</span><span class="stat-label">Certifications</span></div>
+          <div class="stat-box"><span class="stat-num" data-counter="1.5" data-counter-suffix="yr">0</span><span class="stat-label">Experience</span></div>
         </div>
       </div>
 
-      <div class="contact-right">
-        <div class="card contact-card">
-          <div class="contact-card-icon">➤</div>
-          <h3>Say Hello</h3>
-          <p>Drop me an email directly. I typically respond within 24 hours.</p>
-          <a href="mailto:pateluddish47@gmail.com" class="btn btn-primary full">✉️ pateluddish47@gmail.com</a>
+      <form class="card contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+            <span class="field-error" id="nameError"></span>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+            <span class="field-error" id="emailError"></span>
+          </div>
         </div>
-        <div class="card contact-card">
-          <h3>Connect on LinkedIn</h3>
-          <p>Let's connect professionally and grow our network.</p>
-          <a href="https://linkedin.com/in/uddish-patel-1b9895393" target="_blank" rel="noopener" class="btn btn-secondary full">👤 View LinkedIn Profile</a>
+        <div class="form-field">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+          <span class="field-error" id="subjectError"></span>
         </div>
-        <div class="card contact-card status-card">
-          <span class="kf-label">// Status</span>
-          <div class="status-line"><span class="dot"></span><strong>CS Engineering Student</strong></div>
-          <p>Open to Software Development &amp; Cybersecurity roles</p>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <span class="field-error" id="messageError"></span>
         </div>
+        <button type="submit" class="btn btn-primary full">Send Message</button>
+        <div class="form-status" id="formStatus">
+          <span class="check">✓</span>
+          <span id="formStatusText">Message ready — opening your email app…</span>
+        </div>
+      </form>
+    </div>
+
+    <div class="skills-grid" style="margin-top:32px;">
+      <div class="card contact-card">
+        <div class="contact-card-icon">➤</div>
+        <h3>Say Hello</h3>
+        <p>Drop me an email directly. I typically respond within 24 hours.</p>
+        <a href="mailto:pateluddish47@gmail.com" class="btn btn-primary full">✉️ pateluddish47@gmail.com</a>
+      </div>
+      <div class="card contact-card">
+        <h3>Connect on LinkedIn</h3>
+        <p>Let's connect professionally and grow our network.</p>
+        <a href="https://linkedin.com/in/uddish-patel-1b9895393" target="_blank" rel="noopener" class="btn btn-secondary full">👤 View LinkedIn Profile</a>
+      </div>
+      <div class="card contact-card status-card">
+        <span class="kf-label">// Status</span>
+        <div class="status-line"><span class="dot"></span><strong>CS Engineering Student</strong></div>
+        <p>Open to Software Development &amp; Cybersecurity roles</p>
       </div>
     </div>
   </div>
@@ -78,5 +118,6 @@
 <script src="partials.js"></script>
 <script src="background.js"></script>
 <script src="script.js"></script>
+<script src="interactions.js"></script>
 </body>
 </html>

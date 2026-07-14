@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uddish Patel | Software Engineer Portfolio</title>
+<meta name="description" content="View or download Uddish Patel's resume — Computer Science Engineering Student, Python Developer, Cybersecurity Enthusiast.">
+<link rel="canonical" href="https://uddishpatel.in/resume.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="resume">
+
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="mesh-bg" aria-hidden="true"></div>
+<div id="nav-root"></div>
+
+<main class="section" id="resume">
+  <div class="section-inner">
+    <h2 class="section-title"><span class="slash">//</span> Resume</h2>
+    <div class="resume-grid">
+      <div class="card resume-card">
+        <h3>One-page snapshot of my experience</h3>
+        <p>Computer Science Engineering student specializing in full-stack development and cybersecurity fundamentals — projects, internship, certifications, and skills, all in one PDF.</p>
+        <div class="resume-actions">
+          <a href="assets/resume/uddish-patel-resume.pdf" target="_blank" rel="noopener" class="btn btn-primary" id="viewResumeBtn">👁 View Resume</a>
+          <a href="assets/resume/uddish-patel-resume.pdf" download class="btn btn-secondary" id="downloadResumeBtn">⬇ Download Resume</a>
+        </div>
+      </div>
+      <div class="card resume-preview" id="resumePreview">
+        <embed src="assets/resume/uddish-patel-resume.pdf" type="application/pdf" id="resumeEmbed">
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="footer-root"></div>
+
+<script src="partials.js"></script>
+<script src="background.js"></script>
+<script src="script.js"></script>
+<script src="interactions.js"></script>
+<script>
+  // Check whether the resume PDF has actually been uploaded yet; if not,
+  // swap the embed/buttons for a clear "not uploaded" placeholder instead
+  // of a silently broken preview.
+  fetch("assets/resume/uddish-patel-resume.pdf", { method: "HEAD" })
+    .then(res => {
+      if (!res.ok) throw new Error("missing");
+    })
+    .catch(() => {
+      const preview = document.getElementById("resumePreview");
+      preview.innerHTML = '📄<br>Resume not uploaded yet<br><code>assets/resume/uddish-patel-resume.pdf</code>';
+      document.getElementById("viewResumeBtn").classList.add("btn-disabled");
+      document.getElementById("downloadResumeBtn").classList.add("btn-disabled");
+    });
+</script>
+</body>
+</html>

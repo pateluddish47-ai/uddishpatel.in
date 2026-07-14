@@ -2,10 +2,10 @@
 // Nav/footer injection lives in partials.js, ambient background in background.js.
 
 const phrases = [
-  "OWASP Top 10 Practitioner",
-  "Full-Stack Developer",
-  "Cybersecurity Learner",
-  "Python & Flask Enthusiast"
+  "Computer Science Engineering Student",
+  "Cybersecurity Enthusiast",
+  "Python Developer",
+  "Web Developer"
 ];
 
 const typewriterEl = document.getElementById("typewriter");
@@ -104,5 +104,62 @@ if (certCards.length) {
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeLightbox();
+  });
+}
+
+// Contact form — client-side validation, then hands off to the visitor's
+// email app via mailto: (no backend on this static site). Swap this for a
+// fetch() to a form-handling service (e.g. Formspree) if async sending
+// without leaving the page is needed later.
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+  const fields = {
+    name: { el: document.getElementById("name"), error: document.getElementById("nameError") },
+    email: { el: document.getElementById("email"), error: document.getElementById("emailError") },
+    subject: { el: document.getElementById("subject"), error: document.getElementById("subjectError") },
+    message: { el: document.getElementById("message"), error: document.getElementById("messageError") },
+  };
+  const status = document.getElementById("formStatus");
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function setError(field, msg) {
+    fields[field].error.textContent = msg;
+  }
+
+  function validate() {
+    let valid = true;
+    Object.keys(fields).forEach(key => setError(key, ""));
+
+    if (!fields.name.el.value.trim()) { setError("name", "Please enter your name."); valid = false; }
+    if (!EMAIL_RE.test(fields.email.el.value.trim())) { setError("email", "Enter a valid email address."); valid = false; }
+    if (!fields.subject.el.value.trim()) { setError("subject", "Please add a subject."); valid = false; }
+    if (fields.message.el.value.trim().length < 10) { setError("message", "Message should be at least 10 characters."); valid = false; }
+
+    return valid;
+  }
+
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!validate()) {
+      status.classList.remove("show");
+      return;
+    }
+
+    const name = fields.name.el.value.trim();
+    const email = fields.email.el.value.trim();
+    const subject = fields.subject.el.value.trim();
+    const message = fields.message.el.value.trim();
+
+    const body = `${message}\n\n— ${name} (${email})`;
+    const mailto = `mailto:pateluddish47@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    status.classList.add("show");
+    window.location.href = mailto;
+
+    setTimeout(() => {
+      contactForm.reset();
+      status.classList.remove("show");
+    }, 4000);
   });
 }
