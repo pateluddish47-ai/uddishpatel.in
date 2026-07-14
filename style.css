@@ -349,7 +349,7 @@ body{
 .cert-id{padding:4px 24px 22px;color:var(--text-faint);font-family:var(--mono);font-size:0.78rem;}
 .cert-id.accent{color:var(--green);font-size:0.9rem;}
 
-.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.edu-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:24px;}
 
 /* RESUME */
 .resume-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:stretch;}
