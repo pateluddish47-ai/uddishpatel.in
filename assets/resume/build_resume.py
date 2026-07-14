@@ -156,27 +156,28 @@ body(
 section_title("EDUCATION")
 pdf.set_font("Helvetica", "B", 9.8)
 pdf.set_text_color(20, 20, 20)
-pdf.cell(0, 5, "B.E. Computer Science & Engineering  |  CGPA: 7.74/10", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+pdf.cell(0, 5, "B.E. Computer Science & Engineering  |  CGPA: 7.80/10", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 pdf.set_font("Helvetica", "", 9.5)
 pdf.set_text_color(*MUTED)
 pdf.cell(0, 5, "Narnarayan Shastri Institute of Technology (NSIT), Gujarat Technological University (GTU)", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 
 # ---- TRAINING & CERTIFICATIONS -------------------------------------------
 section_title("TRAINING & CERTIFICATIONS")
-pdf.set_font("Helvetica", "B", 9.7)
-pdf.set_text_color(20, 20, 20)
-pdf.write(4.6, "SkillLogic Cybersecurity Course - ")
-pdf.set_font("Helvetica", "", 9.7)
-pdf.set_text_color(*TEXT)
-pdf.write(4.6, "Ethical hacking, vulnerability concepts, security tools and methodologies")
-pdf.ln(6)
-pdf.set_font("Helvetica", "B", 9.7)
-pdf.set_text_color(20, 20, 20)
-pdf.write(4.6, "TryHackMe - ")
-pdf.set_font("Helvetica", "", 9.7)
-pdf.set_text_color(*TEXT)
-pdf.write(4.6, "20% Completed: Hands-on labs (reconnaissance, web attacks), real-world attack simulations")
-pdf.ln(7)
+certifications = [
+    ("Cybersecurity Internship - Unified Mentor Private Limited", "3-month internship: network security, vulnerability assessment, ethical hacking fundamentals"),
+    ("Pre Security Learning Path - TryHackMe", "Completed - 19h 10m of hands-on labs: reconnaissance, web attacks, real-world attack simulations"),
+    ("Complete Web Development Course - Udemy", "100-hour program: HTML, CSS, JavaScript, responsive design, frontend and backend development"),
+    ("Certificate of Professional Exposure - SkillFied Mentor", "Professional career development and industry orientation session"),
+]
+for title, desc in certifications:
+    pdf.set_font("Helvetica", "B", 9.7)
+    pdf.set_text_color(20, 20, 20)
+    pdf.write(4.6, title + " - ")
+    pdf.set_font("Helvetica", "", 9.7)
+    pdf.set_text_color(*TEXT)
+    pdf.write(4.6, desc)
+    pdf.ln(6)
+pdf.ln(1)
 
 # ---- KEY STRENGTHS --------------------------------------------------------
 section_title("KEY STRENGTHS")
