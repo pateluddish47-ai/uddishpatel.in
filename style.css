@@ -43,17 +43,14 @@ body{
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 
-/* Ambient static layers behind the canvas animation */
+/* Faint static grid texture — no animation, just subtle depth */
 .grid-bg{
-  position:fixed;inset:0;z-index:-3;
+  position:fixed;inset:0;z-index:-1;
   background-image:
     linear-gradient(color-mix(in oklab, var(--green) 4%, transparent) 1px, transparent 1px),
     linear-gradient(90deg, color-mix(in oklab, var(--green) 4%, transparent) 1px, transparent 1px);
   background-size:48px 48px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 75%);
-}
-#bg-canvas{
-  position:fixed;inset:0;z-index:-1;pointer-events:none;
 }
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto;}
