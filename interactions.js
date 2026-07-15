@@ -1,33 +1,37 @@
-// Shared micro-interactions used across every page: scroll-reveal fade/slide-ins
-// (in the spirit of Olynto Technologies' site — alternating fadeLeft/fadeRight
-// on cards, fadeUp on headings) and animated stat counters.
+// Shared micro-interactions used across every page: scroll-reveal entrance
+// animations (a distinct 3D-ish style per section — flip, tilt, spin, skew,
+// pop, swing) and animated stat counters.
 // All guarded so pages without a given element simply skip that feature.
 
 document.addEventListener("DOMContentLoaded", () => {
   // ---- scroll reveal --------------------------------------------------
-  // Headings/hero: fade up. Cards: alternate left/right per grid for rhythm.
   const fadeUpTargets = document.querySelectorAll(
     ".section-title, .hero-inner, .resume-preview"
   );
   fadeUpTargets.forEach(el => el.classList.add("reveal"));
 
-  const cardGroups = document.querySelectorAll(
-    ".skills-grid, .cert-grid, .edu-grid, .project-list, .timeline, .about-cards"
+  // One signature entrance animation per page/section.
+  const PAGE_CARD_ANIMATIONS = {
+    about: "flip-in-y",
+    projects: "flip-in-x",
+    skills: "spin-in",
+    experience: "skew-in",
+    certifications: "pop-in",
+    contact: "swing-in",
+    resume: "fade-rotate-in",
+  };
+  const page = document.body.dataset.page;
+  const cardAnimation = PAGE_CARD_ANIMATIONS[page] || "reveal";
+
+  document.querySelectorAll(".card").forEach((el, i) => {
+    el.classList.add(cardAnimation);
+    const delay = Math.min(i % 6, 5);
+    if (delay > 0) el.classList.add(`reveal-delay-${delay}`);
+  });
+
+  const revealTargets = document.querySelectorAll(
+    ".reveal, .reveal-left, .reveal-right, .flip-in-y, .flip-in-x, .spin-in, .skew-in, .pop-in, .swing-in, .fade-rotate-in"
   );
-  const seenCards = new Set();
-  cardGroups.forEach(group => {
-    group.querySelectorAll(".card").forEach((el, i) => {
-      el.classList.add(i % 2 === 0 ? "reveal-left" : "reveal-right");
-      seenCards.add(el);
-    });
-  });
-
-  // Any remaining cards not inside a recognized grid (e.g. profile-card) fade up.
-  document.querySelectorAll(".card").forEach(el => {
-    if (!seenCards.has(el)) el.classList.add("reveal");
-  });
-
-  const revealTargets = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
   const revealObserver = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {

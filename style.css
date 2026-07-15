@@ -111,18 +111,51 @@ body{
 .slash{color:var(--green);font-weight:400;}
 .section-lead{color:var(--text-dim);max-width:640px;margin:-30px 0 40px;font-size:1rem;}
 
-/* SCROLL REVEAL — fadeUp/fadeLeft/fadeRight, in the spirit of Olynto's motion */
+/* SCROLL REVEAL — one distinct 3D entrance style per section */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease), transform .7s var(--ease);}
 .reveal.in-view{opacity:1;transform:translateY(0);}
 .reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .8s var(--ease), transform .8s var(--ease);}
 .reveal-left.in-view{opacity:1;transform:translateX(0);}
 .reveal-right{opacity:0;transform:translateX(40px);transition:opacity .8s var(--ease), transform .8s var(--ease);}
 .reveal-right.in-view{opacity:1;transform:translateX(0);}
+
+/* About: cards flip in around the Y axis, like a card being turned face-up */
+.flip-in-y{opacity:0;transform:perspective(1200px) rotateY(-78deg);transition:opacity .7s var(--ease), transform .7s var(--ease);}
+.flip-in-y.in-view{opacity:1;transform:perspective(1200px) rotateY(0deg);}
+
+/* Projects: cards tilt up into place, like being laid flat on a table */
+.flip-in-x{opacity:0;transform:perspective(1200px) rotateX(58deg) translateY(24px);transition:opacity .7s var(--ease), transform .7s var(--ease);}
+.flip-in-x.in-view{opacity:1;transform:perspective(1200px) rotateX(0deg) translateY(0);}
+
+/* Skills: cards spin+scale in */
+.spin-in{opacity:0;transform:rotate(-14deg) scale(.75);transition:opacity .6s var(--ease), transform .6s var(--ease);}
+.spin-in.in-view{opacity:1;transform:rotate(0) scale(1);}
+
+/* Experience/Education: cards skew in, like sliding off a stack */
+.skew-in{opacity:0;transform:skewY(6deg) translateY(36px);transition:opacity .7s var(--ease), transform .7s var(--ease);}
+.skew-in.in-view{opacity:1;transform:skewY(0) translateY(0);}
+
+/* Certifications: cards pop in with a slight rotation */
+.pop-in{opacity:0;transform:rotate(-6deg) scale(.85);transition:opacity .55s var(--ease), transform .55s var(--ease);}
+.pop-in.in-view{opacity:1;transform:rotate(0) scale(1);}
+
+/* Contact: cards swing in from a top-left hinge, like a door opening */
+.swing-in{opacity:0;transform-origin:top left;transform:rotate(-22deg);transition:opacity .6s var(--ease), transform .6s var(--ease);}
+.swing-in.in-view{opacity:1;transform:rotate(0);}
+
+/* Resume: cards fade up with a light tilt */
+.fade-rotate-in{opacity:0;transform:translateY(24px) rotate(3deg);transition:opacity .6s var(--ease), transform .6s var(--ease);}
+.fade-rotate-in.in-view{opacity:1;transform:translateY(0) rotate(0);}
+
 .reveal-delay-1{transition-delay:.08s;}
 .reveal-delay-2{transition-delay:.16s;}
 .reveal-delay-3{transition-delay:.24s;}
+.reveal-delay-4{transition-delay:.32s;}
+.reveal-delay-5{transition-delay:.4s;}
 @media (prefers-reduced-motion: reduce){
-  .reveal, .reveal-left, .reveal-right{opacity:1;transform:none;transition:none;}
+  .reveal, .reveal-left, .reveal-right, .flip-in-y, .flip-in-x, .spin-in, .skew-in, .pop-in, .swing-in, .fade-rotate-in{
+    opacity:1;transform:none;transition:none;
+  }
 }
 
 /* Icon glow pulse, matching Olynto's accent glow accents */
