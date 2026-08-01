@@ -172,6 +172,7 @@ certifications = [
     ("Pre Security Learning Path - TryHackMe", "Completed - 19h 10m of hands-on labs: reconnaissance, web attacks, real-world attack simulations"),
     ("Complete Web Development Course - Udemy", "100-hour program: HTML, CSS, JavaScript, responsive design, frontend and backend development"),
     ("Certificate of Professional Exposure - SkillFied Mentor", "Professional career development and industry orientation session"),
+    ("Python Developer Skill Based Training - MeYou.AITech", "2-week (76h) internship with a real-life capstone project"),
 ]
 for title, desc in certifications:
     pdf.set_font("Helvetica", "B", 9.7)
