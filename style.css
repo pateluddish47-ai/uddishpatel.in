@@ -1,24 +1,24 @@
 :root{
-  /* Olynto-style theme: deep navy base + electric blue gradient accent + glass cards */
-  --bg: #050f23;
-  --bg-elevated: #0a1025;
+  /* Monochrome theme: single neutral charcoal shade, no color accent */
+  --bg: #0b0b0d;
+  --bg-elevated: #131316;
   --card: rgba(255, 255, 255, 0.045);
-  --card-solid: #0b1428;
-  --popover: #0b1428;
+  --card-solid: #17171a;
+  --popover: #17171a;
   --border: rgba(255, 255, 255, 0.09);
-  --border-hover: rgba(255, 255, 255, 0.2);
+  --border-hover: rgba(255, 255, 255, 0.22);
   --input: rgba(255, 255, 255, 0.05);
   --muted: rgba(255, 255, 255, 0.05);
   --secondary: rgba(255, 255, 255, 0.07);
-  --green: #0a5cff;
-  --green-dim: #1f6fd8;
-  --green-light: #7fb0ff;
-  --violet: #38bdf8;
-  --gradient: linear-gradient(120deg, var(--green), var(--violet));
-  --page-gradient: linear-gradient(180deg, #050b1e 0%, #050f23 45%, #030b1a 100%);
-  --text: #f2f5fb;
-  --text-dim: #b9c5db;
-  --text-faint: #8a97b3;
+  --green: #e6e6ea;
+  --green-dim: #9a9aa3;
+  --green-light: #c7c7ce;
+  --violet: #e6e6ea;
+  --gradient: var(--green);
+  --page-gradient: linear-gradient(180deg, #0a0a0c 0%, #0b0b0d 45%, #08080a 100%);
+  --text: #f3f3f5;
+  --text-dim: #b3b3ba;
+  --text-faint: #83838c;
   --mono: "Inter", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   --sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --radius: 1rem;
